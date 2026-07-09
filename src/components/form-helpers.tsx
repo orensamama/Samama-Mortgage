@@ -51,7 +51,7 @@ export function FormStatusMessage({
 }) {
   if (status === "success") {
     return (
-      <div className="flex items-center gap-2 rounded-lg bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
+      <div className="flex items-center gap-2 rounded-2xl bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
         <CheckCircle2 className="h-5 w-5 shrink-0" />
         {successMessage}
       </div>
@@ -59,7 +59,7 @@ export function FormStatusMessage({
   }
   if (status === "error") {
     return (
-      <div className="flex items-center gap-2 rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+      <div className="flex items-center gap-2 rounded-2xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
         <AlertCircle className="h-5 w-5 shrink-0" />
         {errorMessage}
       </div>
@@ -81,10 +81,10 @@ export function SubmitButton({
     <button
       type="submit"
       disabled={status === "submitting"}
-      className={`inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold shadow-sm transition disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto ${
+      className={`inline-flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-3.5 font-semibold shadow-soft transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 sm:w-auto ${
         variant === "gold"
-          ? "bg-gold text-gold-foreground hover:brightness-105 hover:shadow-md"
-          : "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-md"
+          ? "bg-gold text-gold-foreground hover:-translate-y-0.5 hover:shadow-soft-gold hover:brightness-105"
+          : "bg-primary text-primary-foreground hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-soft-lg"
       }`}
     >
       {status === "submitting" && <Loader2 className="h-4 w-4 animate-spin" />}

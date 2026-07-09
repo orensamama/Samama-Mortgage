@@ -13,7 +13,7 @@ function Wordmark({ size = "header" }: { size?: "header" | "footer" }) {
   return (
     <span className="flex items-center gap-3">
       <span
-        className={`flex ${badgeSize} shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-[oklch(0.7_0.1_82)] text-gold-foreground shadow-sm`}
+        className={`flex ${badgeSize} shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-[oklch(0.7_0.1_82)] text-gold-foreground shadow-soft transition-transform duration-300`}
       >
         <Landmark className={iconSize} />
       </span>
@@ -35,21 +35,26 @@ export function SiteHeader() {
           <Wordmark />
         </a>
         <nav className="hidden items-center gap-10 text-sm font-medium text-foreground/75 lg:flex">
-          <a href="/#upload-report" className="transition hover:text-primary">
-            בדיקת מיחזור משכנתא
-          </a>
-          <a href="/#document-guides" className="transition hover:text-primary">
-            מדריך המסמכים
-          </a>
-          <a href="/#contact-footer" className="transition hover:text-primary">
-            צור קשר
-          </a>
+          {[
+            { href: "/#upload-report", label: "בדיקת מיחזור משכנתא" },
+            { href: "/#document-guides", label: "מדריך המסמכים" },
+            { href: "/#contact-footer", label: "צור קשר" },
+          ].map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="group relative py-1 transition-colors duration-300 hover:text-primary"
+            >
+              {link.label}
+              <span className="absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-gold transition-transform duration-300 group-hover:scale-x-100" />
+            </a>
+          ))}
         </nav>
         <a
           href={OREN_WHATSAPP}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+          className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-soft-lg"
         >
           <WhatsAppIcon className="h-4 w-4" />
           <span className="hidden sm:inline">לייעוץ ללא עלות</span>
@@ -66,7 +71,7 @@ function DesktopWhatsAppFab() {
       href={OREN_WHATSAPP}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 left-6 z-50 hidden items-center gap-2 rounded-full bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-2xl ring-1 ring-gold/40 transition hover:-translate-y-0.5 hover:bg-primary/90 md:flex"
+      className="fixed bottom-6 left-6 z-50 hidden items-center gap-2 rounded-full bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-soft-xl ring-1 ring-gold/40 transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-soft-gold md:flex"
     >
       <MessageCircle className="h-4 w-4 text-gold" />
       וואטסאפ ישיר לאורן
@@ -83,7 +88,7 @@ function MobileActionBar() {
     >
       <a
         href="/#upload-report"
-        className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-3.5 text-sm font-semibold text-primary-foreground shadow-md transition active:scale-[0.97] active:bg-white/15"
+        className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/10 px-4 py-3.5 text-sm font-semibold text-primary-foreground shadow-soft transition-all duration-300 active:scale-[0.97] active:bg-white/15"
       >
         <UploadCloud className="h-4 w-4 text-gold" />
         שליחת דוח
@@ -92,7 +97,7 @@ function MobileActionBar() {
         href={OREN_WHATSAPP}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gold px-4 py-3.5 text-sm font-semibold text-gold-foreground shadow-md transition active:scale-[0.97] active:brightness-95"
+        className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-gold px-4 py-3.5 text-sm font-semibold text-gold-foreground shadow-soft transition-all duration-300 active:scale-[0.97] active:brightness-95"
       >
         <WhatsAppIcon className="h-4 w-4" />
         וואטסאפ לאורן

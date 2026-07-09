@@ -4,9 +4,9 @@ import { WhatsAppIcon } from "@/components/whatsapp-icon";
 
 export function SiteFooter() {
   return (
-    <footer id="contact-footer" className="border-t border-border bg-secondary py-12">
+    <footer id="contact-footer" className="bg-secondary py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid gap-10 rounded-[2rem] border border-border bg-card p-8 shadow-soft-lg md:grid-cols-3 md:p-12">
           <div className="space-y-4">
             <Wordmark size="footer" />
             <p className="text-sm leading-relaxed text-muted-foreground">
@@ -22,21 +22,21 @@ export function SiteFooter() {
                 href="https://wa.me/972542008230"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 text-muted-foreground transition hover:text-[#25D366]"
+                className="group flex items-center gap-2.5 text-muted-foreground transition-all duration-300 hover:translate-x-[-2px] hover:text-[#25D366]"
               >
                 <WhatsAppIcon className="h-4 w-4" />
                 אורן סממה: 054-200-8230
               </a>
               <a
                 href="tel:0542008230"
-                className="flex items-center gap-2.5 text-muted-foreground transition hover:text-primary"
+                className="group flex items-center gap-2.5 text-muted-foreground transition-all duration-300 hover:translate-x-[-2px] hover:text-primary"
               >
                 <Phone className="h-4 w-4" />
                 התקשרו: 054-200-8230
               </a>
               <a
                 href="mailto:samama.mtg@gmail.com"
-                className="flex items-center gap-2.5 text-muted-foreground transition hover:text-primary"
+                className="group flex items-center gap-2.5 text-muted-foreground transition-all duration-300 hover:translate-x-[-2px] hover:text-primary"
               >
                 <Mail className="h-4 w-4" />
                 מייל: samama.mtg@gmail.com
@@ -56,7 +56,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-border pt-6 text-center text-xs text-muted-foreground/60">
+        <div className="mt-8 text-center text-xs text-muted-foreground/60">
           <p>© {new Date().getFullYear()} אורן סממה - ייעוץ משכנתאות. כל הזכויות שמורות.</p>
         </div>
       </div>

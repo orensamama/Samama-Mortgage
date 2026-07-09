@@ -9,6 +9,7 @@ import {
   Stamp,
   UploadCloud,
 } from "lucide-react";
+import orenImg from "@/assets/oren.jpeg";
 import { SiteHeader, FloatingActions } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { useSubmitForm, FormStatusMessage, SubmitButton } from "@/components/form-helpers";
@@ -141,11 +142,11 @@ function DocumentGuideStation() {
             <AccordionItem
               key={doc.title}
               value={`doc-${index}`}
-              className="overflow-hidden rounded-2xl border border-border bg-card px-6 shadow-md transition hover:shadow-lg md:px-8"
+              className="overflow-hidden rounded-3xl border border-border bg-card px-6 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft-lg md:px-8"
             >
               <AccordionTrigger className="py-6 text-right hover:no-underline [&[data-state=open]>svg]:text-gold">
                 <span className="flex items-center gap-4">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition-colors duration-300">
                     <doc.icon className="h-6 w-6" />
                   </span>
                   <span className="font-display text-lg font-bold text-primary md:text-xl">
@@ -176,7 +177,7 @@ function DocumentGuideStation() {
                   ))}
 
                   {doc.note && (
-                    <p className="mt-5 rounded-xl bg-secondary/70 px-4 py-3 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-5 rounded-2xl bg-secondary/70 px-4 py-3 text-sm leading-relaxed text-muted-foreground">
                       {doc.note}
                     </p>
                   )}
@@ -186,7 +187,7 @@ function DocumentGuideStation() {
                       href={doc.link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-5 inline-flex items-center gap-2 rounded-xl bg-gold px-5 py-3 text-sm font-semibold text-gold-foreground shadow-sm transition hover:-translate-y-0.5 hover:brightness-105 hover:shadow-md"
+                      className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-gold px-5 py-3 text-sm font-semibold text-gold-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft-gold hover:brightness-105"
                     >
                       <ExternalLink className="h-4 w-4" />
                       {doc.link.label}
@@ -246,28 +247,50 @@ function Index() {
         <section className="relative overflow-hidden bg-[oklch(0.18_0.04_258)] py-20 text-primary-foreground md:py-28">
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute -top-32 right-[-10%] h-[420px] w-[420px] rounded-full bg-gold opacity-[0.12] blur-[120px]" />
+            <div className="absolute bottom-[-15%] left-[-10%] h-[380px] w-[380px] rounded-full bg-[oklch(0.35_0.08_258)] opacity-60 blur-[130px]" />
           </div>
-          <div className="relative mx-auto max-w-4xl px-6 text-center">
-            <span className="inline-flex items-center gap-2.5 rounded-full border border-gold/30 bg-gold/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-              בדיקת מיחזור משכנתא — ללא עלות
-            </span>
-            <h1 className="mt-6 font-display text-4xl font-bold leading-tight md:text-5xl">
-              בודקים עבורכם כדאיות
-              <span className="mt-1 block bg-gradient-to-l from-gold via-[oklch(0.86_0.08_85)] to-gold bg-clip-text text-transparent">
-                מיחזור משכנתא
+          <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="text-center lg:text-right">
+              <span className="inline-flex items-center gap-2.5 rounded-full border border-gold/30 bg-gold/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
+                <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+                בדיקת מיחזור משכנתא — ללא עלות
               </span>
-            </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-primary-foreground/80">
-              לקוחות משכנתא קיימים — העלו את דוח היתרות שלכם ונבדוק בחינם, ללא עלות וללא התחייבות,
-              אם מגיע לכם מסלול משתלם יותר.
-            </p>
+              <h1 className="mt-6 font-display text-4xl font-bold leading-tight md:text-5xl">
+                בודקים עבורכם כדאיות
+                <span className="mt-1 block bg-gradient-to-l from-gold via-[oklch(0.86_0.08_85)] to-gold bg-clip-text text-transparent">
+                  מיחזור משכנתא
+                </span>
+              </h1>
+              <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 lg:mx-0">
+                לקוחות משכנתא קיימים — העלו את דוח היתרות שלכם ונבדוק בחינם, ללא עלות וללא
+                התחייבות, אם מגיע לכם מסלול משתלם יותר.
+              </p>
+              <p className="mx-auto mt-6 max-w-2xl border-t border-white/10 pt-6 text-base leading-relaxed text-primary-foreground/70 lg:mx-0">
+                &rdquo;אני אורן סממה, יועץ משכנתאות אסטרטגי — מלווה אתכם אישית מול הבנקים, שלב אחר
+                שלב, כדי שתקבלו את התמהיל הנכון והמשתלם ביותר עבורכם.&rdquo;
+              </p>
+            </div>
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative">
+                <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-gold/40 via-gold/5 to-transparent blur-2xl" />
+                <div className="relative overflow-hidden rounded-[2rem] shadow-soft-xl ring-1 ring-white/10">
+                  <img
+                    src={orenImg}
+                    alt="אורן סממה, יועץ משכנתאות"
+                    className="h-[340px] w-[280px] object-cover object-top sm:h-[400px] sm:w-[320px]"
+                  />
+                </div>
+                <div className="absolute -bottom-5 right-1/2 translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-5 py-2.5 text-xs font-bold text-gold-foreground shadow-soft-gold sm:right-auto sm:-left-4 sm:translate-x-0">
+                  אורן סממה · יועץ משכנתאות
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         <section id="upload-report" className="bg-secondary py-20 md:py-28">
           <div className="mx-auto grid max-w-6xl gap-8 px-6 lg:grid-cols-2 lg:items-start">
-            <div className="rounded-2xl border border-border bg-card p-8 shadow-md md:p-10">
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-soft-lg transition-shadow duration-300 hover:shadow-soft-xl md:p-10">
               <h2 className="flex items-center gap-2.5 font-display text-xl font-bold text-primary">
                 <FileSpreadsheet className="h-6 w-6 text-gold" />
                 איך מפיקים דוח יתרות לסילוק?
@@ -285,14 +308,14 @@ function Index() {
                 href="/mortgage-guide.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 flex items-center justify-center gap-2.5 rounded-xl bg-gold px-6 py-4 text-center font-semibold text-gold-foreground shadow-md transition hover:-translate-y-0.5 hover:brightness-105 hover:shadow-lg"
+                className="mt-7 flex items-center justify-center gap-2.5 rounded-2xl bg-gold px-6 py-4 text-center font-semibold text-gold-foreground shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft-gold hover:brightness-105"
               >
                 <FileText className="h-5 w-5" />
                 לחצו כאן לצפייה במדריך המלא להפקת הדוח (שלב אחר שלב)
               </a>
             </div>
 
-            <div className="rounded-2xl border border-border bg-card p-8 shadow-md md:p-10">
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-soft-lg transition-shadow duration-300 hover:shadow-soft-xl md:p-10">
               <h2 className="font-display text-xl font-bold text-primary">שליחת הדוח לבדיקה</h2>
               <p className="mt-2 text-sm text-muted-foreground">
                 מלאו את פרטיכם וצרפו את דוח היתרות — נחזור אליכם עם תוצאות הבדיקה.

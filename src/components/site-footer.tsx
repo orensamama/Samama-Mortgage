@@ -35,11 +35,11 @@ export function SiteFooter() {
                 התקשרו: 054-200-8230
               </a>
               <a
-                href="mailto:orensamama@gmail.com"
+                href="mailto:samama.mtg@gmail.com"
                 className="flex items-center gap-2.5 text-muted-foreground transition hover:text-primary"
               >
                 <Mail className="h-4 w-4" />
-                מייל: orensamama@gmail.com
+                מייל: samama.mtg@gmail.com
               </a>
             </div>
           </div>

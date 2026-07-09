@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 
-const DESTINATION_EMAIL = "orensamama@gmail.com";
+const DESTINATION_EMAIL = "samama.mtg@gmail.com";
 
 const FORM_TITLES: Record<string, string> = {
   mortgage: "מסמך משכנתא חדש הועלה מהאתר",

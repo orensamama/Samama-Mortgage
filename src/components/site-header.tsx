@@ -1,29 +1,17 @@
-import { Landmark, MessageCircle, UploadCloud } from "lucide-react";
+import { MessageCircle, UploadCloud } from "lucide-react";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
+import logo from "@/assets/logo.png";
 
 const OREN_WHATSAPP = "https://wa.me/972542008230";
 
 function Wordmark({ size = "header" }: { size?: "header" | "footer" }) {
-  const badgeSize = size === "header" ? "h-11 w-11" : "h-9 w-9";
-  const iconSize = size === "header" ? "h-5 w-5" : "h-4 w-4";
-  const titleClass =
-    size === "header"
-      ? "font-display text-base font-bold tracking-tight text-primary"
-      : "font-display text-sm font-bold tracking-tight text-primary";
+  const heightClass = size === "header" ? "h-9 sm:h-10" : "h-8";
   return (
-    <span className="flex items-center gap-3">
-      <span
-        className={`flex ${badgeSize} shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-[oklch(0.7_0.1_82)] text-gold-foreground shadow-soft transition-transform duration-300`}
-      >
-        <Landmark className={iconSize} />
-      </span>
-      <span className="flex flex-col leading-tight">
-        <span className={titleClass}>אורן סממה</span>
-        <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-          ייעוץ משכנתאות
-        </span>
-      </span>
-    </span>
+    <img
+      src={logo}
+      alt="סממה - ייעוץ משכנתאות"
+      className={`${heightClass} w-auto shrink-0 object-contain`}
+    />
   );
 }
 

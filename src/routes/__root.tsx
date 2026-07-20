@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "אורן סממה - ייעוץ משכנתאות" },
+      { title: "אורן טל סממה | ייעוץ משכנתאות ופתרונות פיננסיים" },
       {
         name: "description",
         content: "אורן סממה - ייעוץ משכנתאות אסטרטגי. ליווי אישי ומקצועי ברכישת דירה, מיחזור משכנתא ואיחוד הלוואות.",
       },
-      { name: "author", content: "אורן סממה - ייעוץ משכנתאות" },
-      { property: "og:title", content: "אורן סממה - ייעוץ משכנתאות" },
+      { name: "author", content: "אורן טל סממה | ייעוץ משכנתאות ופתרונות פיננסיים" },
+      { property: "og:title", content: "אורן טל סממה | ייעוץ משכנתאות ופתרונות פיננסיים" },
       {
         property: "og:description",
         content: "ליווי אישי ומקצועי ברכישת דירה, מיחזור משכנתא ואיחוד הלוואות.",

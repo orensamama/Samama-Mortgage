@@ -5,7 +5,7 @@ import logo from "@/assets/logo.png";
 const OREN_WHATSAPP = "https://wa.me/972542008230";
 
 function Wordmark({ size = "header" }: { size?: "header" | "footer" }) {
-  const heightClass = size === "header" ? "h-9 sm:h-10" : "h-8";
+  const heightClass = size === "header" ? "h-12 sm:h-14" : "h-8";
   return (
     <img
       src={logo}
@@ -19,10 +19,10 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-xl">
       <div className="w-full flex items-center justify-between px-6 py-2 text-[12px] font-medium text-primary/70 sm:px-6 sm:text-xs opacity-70" style={{ paddingLeft: 24, paddingRight: 24 }}>
-        <span className="order-1">בס\"ד</span>
+        <span className="order-1">בס"ד</span>
         <span className="order-2">בשם ה' נעשה ונצליח</span>
       </div>
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5 lg:px-10">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-6 lg:px-10">
         <a href="/" className="flex items-center gap-3.5">
           <Wordmark />
         </a>
